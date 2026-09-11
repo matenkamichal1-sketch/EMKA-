@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMKA Krzysztof Mateńka - Dekarstwo i Usługi Podnośnikiem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #ffb703;
+            --primary-hover: #fb8500;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --grey: #4a4a4a;
+        }
+
+        body {
+            color: var(--grey);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 12px 30px;
+            font-weight: 700;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--dark);
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        header {
+            background-color: var(--dark);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            padding: 10px 5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1631553127988-347ec0590a3d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .services {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-box {
+            background-color: #ffffff;
+            padding: 35px 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-bottom-color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .service-box h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--grey);
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            height: 250px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay h4,
+        .gallery-item:hover .gallery-overlay p {
+            transform: translateY(0);
+        }
+
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .info-link-box {
+            margin-bottom: 25px;
+        }
+
+        .info-link-box p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #a0a0a0;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .info-link-box a, .info-link-box span {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .info-link-box a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            flex: 1.5;
+            min-width: 300px;
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* STYLE STANU WYSYŁANIA I SUKCESU */
+        [data-fs-success], [data-fs-error] {
+            display: none;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        [data-fs-success][data-fs-active] {
+            display: block;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        [data-fs-error][data-fs-active] {
+            display: block;
+            background-color: #f87dda;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .form-control[aria-invalid='true'] {
+            border-color: #dc3545;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: #ffffff;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                justify-content: center;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">EMKA<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#uslugi">Usługi</a></li>
+                    <li><a href="#o-nas">O nas</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>EMKA <span>Krzysztof Mateńka</span></h1>
+            <p>Profesjonalne wykonawstwo na wysokości – solidne dachy, konstrukcje z drewna i usługi podnośnikiem do 27m.</p>
+            <a href="#kontakt" class="btn">Skontaktuj się</a>
+        </div>
+    </section>
+
+    <section id="uslugi" class="services">
+        <div class="container">
+            <h2 class="section-title">Nasze Usługi</h2>
+            <div class="services-grid">
+                
+                <div class="service-box">
+                    <div class="service-icon">🏠</div>
+                    <h3>Dekarstwo</h3>
+                    <p>Kompleksowe budowanie i krycie dachów dachówką, blachodachówką oraz papą. Oferujemy naprawy, renowacje i pełne systemy rynnowe.</p>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">🪵</div>
+                    <h3>Konstrukcje Drewniane</h3>
+                    <p>Wznosimy projekty ciesielskie w każdym wymiarze: od więźb dachowych, solidnych wiat i funkcjonalnych altan, aż po unikalne domki na drzewie.</p>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Usługi Podnośnikiem do 27m</h3>
+                    <p>Wykonujemy specjalistyczne prace budowlane, montażowe i naprawcze przy użyciu własnego podnośnika koszowego o wysięgu do 27 metrów.</p>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">🌲</div>
+                    <h3>Prace Wysokościowe</h3>
+                    <p>Bezpieczne usługi z wysokości: profesjonalna wycinka drzew, mycie i renowacja elewacji, czyszczenie poszyć dachowych oraz odśnieżanie.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="o-nas" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: var(--dark); text-transform: uppercase;">O Firmie</h2>
+                    <h3>Solidność, Terminowość, Doświadczenie</h3>
+                    <p>Firma <strong>EMKA Krzysztof Mateńka</strong> oferuje profesjonalne usługi dekarskie, ciesielskie oraz wykonawcze prace wysokościowe na terenie <strong>Mińska Mazowieckiego i okolic</strong>.</p>
+                    <p>Dysponujemy własnym sprzętem, w tym podnośnikiem koszowym o zasięgu roboczym do 27 metrów, dzięki czemu sprawnie i bezpośrednio realizujemy zlecenia – od prac na dachu po nietypowe konstrukcje z drewna.</p>
+                    <div class="features">
+                        <div class="feature-item">Więźby, altany, wiaty i domki na drzewie</div>
+                        <div class="feature-item">Własny podnośnik koszowy (wysięg do 27m)</div>
+                        <div class="feature-item">Działamy w Mińsku Mazowieckim i okolicach</div>
+                        <div class="feature-item">Gwarancja bezpiecznego wykonania prac</div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Prace budowlane i dekarskie">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nasze Realizacje</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1631553127988-347ec0590a3d?auto=format&fit=crop&w=500&q=80" alt="Realizacja dachu">
+                    <div class="gallery-overlay">
+                        <h4>Montaż Poszycia Dachowego</h4>
+                        <p>Kompleksowe krycie nowoczesną blachodachówką.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=500&q=80" alt="Praca na wysokości z podnośnika">
+                    <div class="gallery-overlay">
+                        <h4>Prace z Podnośnika</h4>
+                        <p>Realizacja zadań montażowych z kosza do 27m.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=500&q=80" alt="Drewniane konstrukcje budowlane">
+                    <div class="gallery-overlay">
+                        <h4>Architektura Drewniana</h4>
+                        <p>Budowa wytrzymałych wiat, altan ogrodowych i zadaszeń.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=500&q=80" alt="Budowa więźby dachowej">
+                    <div class="gallery-overlay">
+                        <h4>Więźba Dachowa</h4>
+                        <p>Ciesielskie przygotowanie konstrukcji pod nowy dach.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=500&q=80" alt="Drewniany domek letniskowy">
+                    <div class="gallery-overlay">
+                        <h4>Domki z drewna i na drzewie</h4>
+                        <p>Nieszablonowe realizacje mieszkalne oraz rekreacyjne.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=500&q=80" alt="Montaż orynnowania">
+                    <div class="gallery-overlay">
+                        <h4>Obróbki Dekarskie</h4>
+                        <p>Montaż systemów rynnowych i wykończenie okapu.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="contact-wrapper">
+                
+                <div class="contact-info">
+                    <h3>Omówmy szczegóły współpracy</h3>
+                    <p style="margin-bottom: 30px;">Planujesz budowę dachu, postawienie wiaty, a może potrzebujesz fachowego wykonania prac na wysokości za pomocą podnośnika? Skontaktuj się telefonicznie lub napisz wiadomość.</p>
+                    
+                    <div class="info-link-box">
+                        <p>Zadzwoń do nas</p>
+                        <a href="tel:+48123456789">+48 123 456 789</a>
+                    </div>
+
+                    <div class="info-link-box">
+                        <p>Napisz e-mail</p>
+                        <a href="mailto:kontakt@emka-matenka.pl">kontakt@emka-matenka.pl</a>
+                    </div>
+
+                    <div class="info-link-box">
+                        <p>Obszar działania</p>
+                        <span>Mińsk Mazowiecki i okolice</span>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <div data-fs-success>Dziękujemy! Wiadomość została pomyślnie wysłana. Odpowiemy tak szybko, jak to możliwe.</div>
+                    <div data-fs-error>Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.</div>
+
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Imię i Nazwisko / Firma</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="np. Jan Kowalski" required data-fs-field>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numer telefonu</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="np. +48 600 000 000" required data-fs-field>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Opisz czego potrzebujesz</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Interesuje mnie montaż wiaty / wykonanie prac z podnośnika..." required data-fs-field></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;" data-fs-submit-btn>Wyślij Wiadomość</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EMKA Krzysztof Mateńka. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'xaeykvrw' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
