@@ -1,4 +1,4 @@
-<!doctype html>
+<<!doctype html>
 <html lang="pl">
 <head>
 <meta charset="utf-8">
@@ -7,6 +7,174 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#f9a51a;--dark:#1c1c1e;--text:#102033;--light:#f7f8f9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Barlow Condensed",Arial,sans-serif;font-size:18px;background:#f7f8f9}a{text-decoration:none;color:inherit}
+.header{height:74px;background:#1d1d1f;color:#fff;position:fixed;top:0;left:0;right:0;z-index:50;box-shadow:0 3px 12px #0004}
+.nav{height:74px;max-width:1230px;margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.brandLogo{gap:0;width:285px;height:58px;display:flex;align-items:center}.emkaLogo{width:285px;height:auto;display:block;overflow:visible}.emkaLogo .logoMark{fill:var(--orange);stroke:none}.emkaLogo .logoGlyph{fill:none;stroke:#182029;stroke-width:3.8;stroke-linecap:round;stroke-linejoin:round}.emkaLogo .logoMain{fill:#fff;font-family:Montserrat,sans-serif;font-size:34px;font-weight:800;letter-spacing:1px}.emkaLogo .logoSub{fill:#89929c;font-family:Montserrat,sans-serif;font-size:11px;font-weight:500;letter-spacing:2.2px}
+.navlinks{display:flex;align-items:stretch;height:74px;gap:3px}.navlinks a{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.7px;padding:0 20px;display:flex;align-items:center;position:relative}.navlinks a:hover,.navlinks a.active{color:var(--orange)}.navlinks a.active:after{content:"";position:absolute;left:18px;right:18px;bottom:11px;height:3px;background:var(--orange)}
+.menuToggle{display:none;border:0;background:transparent;padding:10px;cursor:pointer;flex-direction:column;gap:5px;z-index:60}.menuToggle span{display:block;width:28px;height:3px;background:#fff;border-radius:3px}.mobileMenu{display:none}
+.page{padding-top:74px;min-height:100vh}.galleryHead{padding:78px 20px 36px;text-align:center;background:#fff}.galleryHead .tag{font-family:Montserrat,sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--orange);margin-bottom:10px}.galleryHead h1{margin:0 0 12px;font-family:Montserrat,sans-serif;font-size:42px;line-height:1.05;color:#182029}.galleryHead p{max-width:760px;margin:0 auto;color:#68798b;line-height:1.45;font-size:19px}.back{display:inline-flex;margin-top:30px;padding:14px 20px;background:var(--orange);color:#15181c;border-radius:5px;font-family:Montserrat,sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px}
+.gallery{max-width:1230px;margin:0 auto;padding:35px 20px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.photo{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 7px 24px #10203312}.photo img{display:block;width:100%;height:280px;object-fit:cover}.caption{padding:13px 16px;font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#182029}.empty{grid-column:1/-1;background:#fff;border:1px dashed #c9d1d9;border-radius:12px;padding:65px 25px;text-align:center;box-shadow:0 7px 24px #10203312}.empty h2{font-family:Montserrat,sans-serif;margin:0 0 10px;font-size:26px;color:#182029}.empty p{margin:0 auto;max-width:650px;color:#68798b;line-height:1.5}
+@media(max-width:850px){.navlinks{display:none}.menuToggle{display:flex}.nav{position:relative}.mobileMenu{position:fixed;top:74px;left:0;right:0;background:#1d1d1f;box-shadow:0 8px 18px #0005;padding:10px 20px 18px;flex-direction:column;z-index:49}.mobileMenu.open{display:flex}.mobileMenu a{color:#fff;font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;letter-spacing:.7px;padding:16px 4px;border-bottom:1px solid #ffffff18}.mobileMenu a:hover{color:var(--orange)}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.brandLogo{width:230px}.emkaLogo{width:230px}.galleryHead h1{font-size:34px}.gallery{grid-template-columns:1fr;padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+<header class="header"><nav class="nav">
+<button class="menuToggle" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<a class="brandLogo" href="index.html" aria-label="EMKA"><svg class="emkaLogo" viewBox="0 0 430 90" role="img" aria-label="EMKA Krzysztof Mateńka"><rect class="logoMark" x="8" y="13" width="76" height="64" rx="9"/><g class="logoGlyph"><path d="M22 45 46 28l24 17"/><path d="M27 43v24h38V43"/><path d="M41 67V51h10v16"/><path d="M35 42h22"/></g><text x="104" y="43" class="logoMain">EMKA</text><text x="106" y="67" class="logoSub">KRZYSZTOF MATEŃKA</text></svg></a>
+<div class="navlinks"><a href="index.html#home">STRONA GŁÓWNA</a><a href="index.html#about">O FIRMIE</a><a href="index.html#services">USŁUGI</a><a href="index.html#realizacje">REALIZACJE</a><a class="active" href="galeria.html">GALERIA</a><a href="index.html#kontakt">KONTAKT</a></div>
+<div class="mobileMenu" id="mobileMenu"><a href="index.html#home">STRONA GŁÓWNA</a><a href="index.html#about">O FIRMIE</a><a href="index.html#services">USŁUGI</a><a href="index.html#realizacje">REALIZACJE</a><a href="galeria.html">GALERIA</a><a href="index.html#kontakt">KONTAKT</a></div>
+</nav></header>
+<main class="page">
+<section class="galleryHead"><div class="tag">EMKA KRZYSZTOF MATEŃKA</div><h1>GALERIA</h1><p>Zdjęcia naszych realizacji, prac dekarskich oraz usług podnośnikiem koszowym.</p><a class="back" href="index.html">← WRÓĆ NA STRONĘ</a></section>
+<section class="gallery" id="galleryGrid"></section>
+</main>
+<script>
+/*
+  NAJPROSTSZE DODAWANIE ZDJĘĆ:
+  1. Wejdź na GitHub do folderu "zdjecia".
+  2. Wgraj zdjęcie jako: 1.jpg, 2.jpg, 3.jpg itd.
+  3. Niczego nie zmieniaj w tym pliku.
+
+  Galeria sama znajdzie zdjęcia od 1 do 30.
+  Obsługiwane rozszerzenia: .jpg, .jpeg, .png, .webp
+*/
+const grid = document.getElementById('galleryGrid');
+let found = 0;
+
+function addPhoto(number, extIndex = 0){
+  const exts = ['jpg','jpeg','png','webp'];
+  if(extIndex >= exts.length){
+    if(number === 30 && found === 0){
+      grid.innerHTML = '<div class="empty"><h2>Galeria jest gotowa</h2><p>Wrzuć zdjęcia do folderu <b>zdjecia</b> jako <b>1.jpg</b>, <b>2.jpg</b>, <b>3.jpg</b> itd. Nie trzeba już edytować tego pliku.</p></div>';
+    }
+    return;
+  }
+
+  const wrap = document.createElement('div');
+  wrap.className = 'photo';
+  const img = document.createElement('img');
+  img.src = `zdjecia/${number}.${exts[extIndex]}`;
+  img.alt = `Realizacja EMKA ${number}`;
+  img.loading = 'lazy';
+  const cap = document.createElement('div');
+  cap.className = 'caption';
+  cap.textContent = `Realizacja ${number}`;
+  wrap.append(img, cap);
+
+  img.onload = () => {
+    found++;
+    grid.appendChild(wrap);
+  };
+  img.onerror = () => addPhoto(number, extIndex + 1);
+}
+
+for(let i=1;i<=30;i++) addPhoto(i);
+
+const t=document.querySelector('.menuToggle'),m=document.querySelector('.mobileMenu');
+if(t&&m){
+  t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')));
+}
+</script>
+</body>
+</html>
+!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMKA — Galeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMKA — Galeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#f9a51a;--dark:#1c1c1e;--text:#102033;--light:#f7f8f9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Barlow Condensed",Arial,sans-serif;font-size:18px;background:#f7f8f9}a{text-decoration:none;color:inherit}
+.header{height:74px;background:#1d1d1f;color:#fff;position:fixed;top:0;left:0;right:0;z-index:50;box-shadow:0 3px 12px #0004}
+.nav{height:74px;max-width:1230px;margin:auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.brandLogo{gap:0;width:285px;height:58px;display:flex;align-items:center}.emkaLogo{width:285px;height:auto;display:block;overflow:visible}.emkaLogo .logoMark{fill:var(--orange);stroke:none}.emkaLogo .logoGlyph{fill:none;stroke:#182029;stroke-width:3.8;stroke-linecap:round;stroke-linejoin:round}.emkaLogo .logoMain{fill:#fff;font-family:Montserrat,sans-serif;font-size:34px;font-weight:800;letter-spacing:1px}.emkaLogo .logoSub{fill:#89929c;font-family:Montserrat,sans-serif;font-size:11px;font-weight:500;letter-spacing:2.2px}
+.navlinks{display:flex;align-items:stretch;height:74px;gap:3px}.navlinks a{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.7px;padding:0 20px;display:flex;align-items:center;position:relative}.navlinks a:hover,.navlinks a.active{color:var(--orange)}.navlinks a.active:after{content:"";position:absolute;left:18px;right:18px;bottom:11px;height:3px;background:var(--orange)}
+.menuToggle{display:none;border:0;background:transparent;padding:10px;cursor:pointer;flex-direction:column;gap:5px;z-index:60}.menuToggle span{display:block;width:28px;height:3px;background:#fff;border-radius:3px}.mobileMenu{display:none}
+.page{padding-top:74px;min-height:100vh}.galleryHead{padding:78px 20px 36px;text-align:center;background:#fff}.galleryHead .tag{font-family:Montserrat,sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--orange);margin-bottom:10px}.galleryHead h1{margin:0 0 12px;font-family:Montserrat,sans-serif;font-size:42px;line-height:1.05;color:#182029}.galleryHead p{max-width:760px;margin:0 auto;color:#68798b;line-height:1.45;font-size:19px}.back{display:inline-flex;margin-top:30px;padding:14px 20px;background:var(--orange);color:#15181c;border-radius:5px;font-family:Montserrat,sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px}
+.gallery{max-width:1230px;margin:0 auto;padding:35px 20px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.photo{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 7px 24px #10203312}.photo img{display:block;width:100%;height:280px;object-fit:cover}.caption{padding:13px 16px;font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#182029}.empty{grid-column:1/-1;background:#fff;border:1px dashed #c9d1d9;border-radius:12px;padding:65px 25px;text-align:center;box-shadow:0 7px 24px #10203312}.empty h2{font-family:Montserrat,sans-serif;margin:0 0 10px;font-size:26px;color:#182029}.empty p{margin:0 auto;max-width:650px;color:#68798b;line-height:1.5}
+@media(max-width:850px){.navlinks{display:none}.menuToggle{display:flex}.nav{position:relative}.mobileMenu{position:fixed;top:74px;left:0;right:0;background:#1d1d1f;box-shadow:0 8px 18px #0005;padding:10px 20px 18px;flex-direction:column;z-index:49}.mobileMenu.open{display:flex}.mobileMenu a{color:#fff;font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;letter-spacing:.7px;padding:16px 4px;border-bottom:1px solid #ffffff18}.mobileMenu a:hover{color:var(--orange)}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.brandLogo{width:230px}.emkaLogo{width:230px}.galleryHead h1{font-size:34px}.gallery{grid-template-columns:1fr;padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+<header class="header"><nav class="nav">
+<button class="menuToggle" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<a class="brandLogo" href="index.html" aria-label="EMKA"><svg class="emkaLogo" viewBox="0 0 430 90" role="img" aria-label="EMKA Krzysztof Mateńka"><rect class="logoMark" x="8" y="13" width="76" height="64" rx="9"/><g class="logoGlyph"><path d="M22 45 46 28l24 17"/><path d="M27 43v24h38V43"/><path d="M41 67V51h10v16"/><path d="M35 42h22"/></g><text x="104" y="43" class="logoMain">EMKA</text><text x="106" y="67" class="logoSub">KRZYSZTOF MATEŃKA</text></svg></a>
+<div class="navlinks"><a href="index.html#home">STRONA GŁÓWNA</a><a href="index.html#about">O FIRMIE</a><a href="index.html#services">USŁUGI</a><a href="index.html#realizacje">REALIZACJE</a><a class="active" href="galeria.html">GALERIA</a><a href="index.html#kontakt">KONTAKT</a></div>
+<div class="mobileMenu" id="mobileMenu"><a href="index.html#home">STRONA GŁÓWNA</a><a href="index.html#about">O FIRMIE</a><a href="index.html#services">USŁUGI</a><a href="index.html#realizacje">REALIZACJE</a><a href="galeria.html">GALERIA</a><a href="index.html#kontakt">KONTAKT</a></div>
+</nav></header>
+<main class="page">
+<section class="galleryHead"><div class="tag">EMKA KRZYSZTOF MATEŃKA</div><h1>GALERIA</h1><p>Zdjęcia naszych realizacji, prac dekarskich oraz usług podnośnikiem koszowym.</p><a class="back" href="index.html">← WRÓĆ NA STRONĘ</a></section>
+<section class="gallery" id="galleryGrid"></section>
+</main>
+<script>
+/*
+  NAJPROSTSZE DODAWANIE ZDJĘĆ:
+  1. Wejdź na GitHub do folderu "zdjecia".
+  2. Wgraj zdjęcie jako: 1.jpg, 2.jpg, 3.jpg itd.
+  3. Niczego nie zmieniaj w tym pliku.
+
+  Galeria sama znajdzie zdjęcia od 1 do 30.
+  Obsługiwane rozszerzenia: .jpg, .jpeg, .png, .webp
+*/
+const grid = document.getElementById('galleryGrid');
+let found = 0;
+
+function addPhoto(number, extIndex = 0){
+  const exts = ['jpg','jpeg','png','webp'];
+  if(extIndex >= exts.length){
+    if(number === 30 && found === 0){
+      grid.innerHTML = '<div class="empty"><h2>Galeria jest gotowa</h2><p>Wrzuć zdjęcia do folderu <b>zdjecia</b> jako <b>1.jpg</b>, <b>2.jpg</b>, <b>3.jpg</b> itd. Nie trzeba już edytować tego pliku.</p></div>';
+    }
+    return;
+  }
+
+  const wrap = document.createElement('div');
+  wrap.className = 'photo';
+  const img = document.createElement('img');
+  img.src = `zdjecia/${number}.${exts[extIndex]}`;
+  img.alt = `Realizacja EMKA ${number}`;
+  img.loading = 'lazy';
+  const cap = document.createElement('div');
+  cap.className = 'caption';
+  cap.textContent = `Realizacja ${number}`;
+  wrap.append(img, cap);
+
+  img.onload = () => {
+    found++;
+    grid.appendChild(wrap);
+  };
+  img.onerror = () => addPhoto(number, extIndex + 1);
+}
+
+for(let i=1;i<=30;i++) addPhoto(i);
+
+const t=document.querySelector('.menuToggle'),m=document.querySelector('.mobileMenu');
+if(t&&m){
+  t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')));
+}
+</script>
+</body>
+</html>
+https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--orange:#f9a51a;--dark:#1c1c1e;--text:#102033;--light:#f7f8f9}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Barlow Condensed",Arial,sans-serif;font-size:18px;background:#f7f8f9}a{text-decoration:none;color:inherit}
